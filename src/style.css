@@ -53,6 +53,9 @@ li:first-letter {
   line-height: 1; /*1 =64px */
   font-weight: 400;
 }
+.weather-temperature a {
+  text-decoration-line: none;
+}
 
 .weather-temperature .units {
   position: relative;
