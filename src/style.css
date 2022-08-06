@@ -44,8 +44,8 @@ li:first-letter {
 .weather-temperature img {
   margin-top: -34px;
   margin-right: 5px;
-  height: 64px;
-  width: 64px;
+  height: 84px;
+  width: 84px;
 }
 .weather-temperature strong {
   color: rgb(33, 33, 33);
