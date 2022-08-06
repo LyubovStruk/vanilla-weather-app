@@ -3,12 +3,12 @@ body {
 }
 
 h1 {
-  color: #878787;
-  font-size: 24px;
+  color: #433f3f; /*#878787;*/
+  font-size: 28px;
   font-weight: 200;
   line-height: 28px;
   width: 326px;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 ul {
   margin: 0;
