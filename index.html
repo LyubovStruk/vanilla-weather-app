@@ -21,7 +21,7 @@
         <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-9">
+              <div class="col-9 input-form">
                 <input
                   type="search"
                   placeholder="Type a city..."
@@ -39,40 +39,42 @@
               </div>
             </div>
           </form>
+
           <div class="overview">
             <h1 id="city"></h1>
-            <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                <img src="" alt="" id="icon" class="float-left" />
-                <span class="float-left">
-                  <strong id="temperature"></strong>
-                  <span class="units">°C </span>
-                </span>
+            <div id="date" class="date-today"></div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img src="" alt="" id="icon" class="float-left" />
+                  <span class="float-left"
+                    ><strong id="temperature"></strong>
+                    <span class="units">°C </span></span
+                  >
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li id="description"></li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </ul>
               </div>
             </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
-            </div>
           </div>
+
           <div class="weather-forecast" id="forecast"></div>
         </div>
-        <small>
+        <p class="coder">
+          The project was coded by
+          <i>Lyubov Struk</i> <br />
           <a
             href="https://github.com/LyubovStruk/vanilla-weather-app"
-            target="_blank"
-            >Open-sours code</a
+            target="blank"
+            >Open-soursed code on GitHub</a
           >
-          by Lyubov Struk
-        </small>
+        </p>
       </div>
     </div>
     <script src="src/app.js"></script>

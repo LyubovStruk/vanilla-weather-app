@@ -18,23 +18,53 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+
+  return `${day}, ${date.getDate()} of ${month} ${hours}:${minutes}`;
 }
 
 function formatDay(timestemp) {
   let date = new Date(timestemp * 1000);
   let day = date.getDay();
-  console.log(date);
+  let month = date.getMonth();
+  //console.log(date);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day];
-  //return day;
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return `${days[day]} <br />${date.getDate()} ${months[month]} `;
 }
 
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  console.log(response.data);
+  // console.log(response.data);
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -49,7 +79,7 @@ function displayForecast(response) {
           forecastDay.weather[0].icon
         }@2x.png"
         alt=""
-        width="45"
+        width="48"
       />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">${Math.round(
@@ -71,11 +101,12 @@ function displayForecast(response) {
 function getForecas(coordinates) {
   let apiKey = "8ef314fc1dd32cfe9282343fc0d6b73d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  // console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
